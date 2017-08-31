@@ -1,0 +1,35 @@
+PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
+  - APLTextView (0.0.4)
+  - DownPicker (0.1.34)
+  - IQKeyboardManager (4.0.10)
+
+DEPENDENCIES:
+  - AFNetworking (~> 3.0)
+  - APLTextView
+  - DownPicker
+  - IQKeyboardManager
+
+SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
+  APLTextView: 54a7fda59d961e93d885ca2f82317bf56b47f4ce
+  DownPicker: c00ea63f08ae82116cc93d0eba74e86bf3d4c68e
+  IQKeyboardManager: 593ee99b88381f4b9ccb22bd680f22606351bd41
+
+PODFILE CHECKSUM: 4fc2a641f50f749381dbc820dd688b124cd3c97f
+
+COCOAPODS: 1.2.1
