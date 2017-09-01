@@ -12,11 +12,12 @@
 
 @interface UserDataModel : NSObject{
     NSString *mUserId;
+    NSString *mPassword;
 }
 
 
 @property (nonatomic, copy) NSString *userId;
-
+@property (nonatomic, copy) NSString *password;
 
 @property (strong) NSManagedObject *userData;
 
@@ -25,6 +26,7 @@
 - (void)clearUserDataModel;
 
 - (void)saveUserID:(NSString *)userID;
+- (void)savePassword:(NSString *)password;
 - (void)saveUserData:(NSDictionary *)userDataDict;
 - (void)printUserData;
 

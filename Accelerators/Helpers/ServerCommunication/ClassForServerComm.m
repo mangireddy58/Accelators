@@ -26,7 +26,7 @@
     manager.responseSerializer.acceptableContentTypes = [NSSet setWithObject:@"text/html"];
     [manager GET:serviceUrl parameters:parametersDictionary progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         if (self.delegate) {
-            [self.delegate onServiceSuccess:(NSDictionary *)responseObject];
+            [self.delegate onServiceSuccess:(NSMutableArray *)responseObject];
         }
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (self.delegate) {
@@ -40,7 +40,7 @@
     NSData* data = [parametersString dataUsingEncoding:NSUTF8StringEncoding];
     NSError *error;
     NSDictionary *parametersDictionary = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
-    NSLog(@"%@", parametersDictionary);
+    NSLog(@"%@ %@",serviceUrl,parametersDictionary);
     AFHTTPSessionManager *manager = [[AFHTTPSessionManager alloc]initWithSessionConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration]];
     [manager.requestSerializer setTimeoutInterval:SERVICE_TIMEOUT];
     manager.requestSerializer = [AFJSONRequestSerializer serializer];

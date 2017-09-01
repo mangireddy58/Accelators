@@ -35,6 +35,7 @@
 #define LOGIN_URL @"validate_user"
 #define REGISTER_URL @"insertExpertDetails"
 #define VALIDATE_EMAIL_URL @"chkmail"
+#define USER_PROFILE_URL @"fetchPersonalDetailsOfParticipant"
 
 #define LOGIN_PARAMETERS @"{\"mobile_deviceId\":\"%@\",\"uname\":\"%@\",\"pass\":\"%@\",\"sync_date\":\"%@\"}"
 
@@ -42,7 +43,7 @@
 
 #define CHECK_EMAIL_PARAMETERS @"{\"email\":\"%@\"}"
 
-
+#define PROFILE_PARAMETERS @"{\"userId\":\"%@\"}"
 
 
 

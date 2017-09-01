@@ -10,8 +10,9 @@
 #import "GlobalConstant.h"
 #import "RootViewController.h"
 #include "ACFloatingTextField.h"
+#import "ClassForServerComm.h"
 
-@interface ProfileViewController : RootViewController<UITextFieldDelegate>
+@interface ProfileViewController : RootViewController<UITextFieldDelegate, ClassForServerCommDelegate>
 
 @property (weak, nonatomic) IBOutlet UILabel *profileLbl;
 @property (weak, nonatomic) IBOutlet UILabel *emailLbl;
@@ -19,6 +20,9 @@
 @property (weak, nonatomic) IBOutlet ACFloatingTextField *mobileTxtFld;
 @property (weak, nonatomic) IBOutlet ACFloatingTextField *emailTxtFld;
 @property (weak, nonatomic) IBOutlet UIButton *changePswdBtn;
+@property (weak, nonatomic) IBOutlet UIButton *editBtn;
+
+@property (strong, nonatomic) NSMutableDictionary *personalDataDict;
 
 
 - (IBAction)backAction:(id)sender;

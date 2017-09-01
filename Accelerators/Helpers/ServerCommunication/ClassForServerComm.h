@@ -15,7 +15,7 @@
 @optional
 
 
-- (void)onServiceSuccess:(id)response;
+- (void)onServiceSuccess:(NSMutableArray *)responseArray;
 - (void)onServiceFailed;
 @end
 

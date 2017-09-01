@@ -14,6 +14,7 @@
 //Singleton Object
 static UserDataModel *sUserDataModel = nil;
 @synthesize userId = mUserId;
+@synthesize password = mPassword;
 @synthesize userData;
 
 + (UserDataModel *)getUserDataModel
@@ -35,8 +36,9 @@ static UserDataModel *sUserDataModel = nil;
             if ([results count] >= 1) {
                 NSManagedObject *userDataManagedObject = [results lastObject];
                 sUserDataModel.userId = [userDataManagedObject valueForKey:@"userId"];
+                sUserDataModel.password = [userDataManagedObject valueForKey:@"password"];
                 NSLog(@"UserId: %@", sUserDataModel.userId);
-                
+                NSLog(@"Password: %@", sUserDataModel.password);
             }
         }
     }
@@ -75,7 +77,31 @@ static UserDataModel *sUserDataModel = nil;
         NSLog(@"Data saved.");
     }
 }
-
+// Password
+- (void)savePassword:(NSString *)password {
+    [self printUserData];
+    mPassword = password;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    
+    if (self.userData) {
+        [self.userData setValue:mPassword forKey:@"password"];
+    }
+    else {
+        NSManagedObject *newuserDataModel = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_NAME inManagedObjectContext:context];
+        
+//        [newuserDataModel setValue:mUserId forKey:@"userId"];
+        [newuserDataModel setValue:mUserId forKey:@"password"];
+    }
+    
+    NSError *error = nil;
+    if (![context save:&error]) {
+        NSLog(@"Can't Save! %@ %@", error, [error localizedDescription]);
+    }
+    else{
+        NSLog(@"Data saved.");
+    }
+}
 #pragma mark - Clearing the data
 - (void)clearUserDataModel{
     
@@ -99,13 +125,6 @@ static UserDataModel *sUserDataModel = nil;
         i++;
     }
 }
-
-
-
-
-
-
-
 
 
 - (void)saveUserData:(NSDictionary *)userDataDict{

@@ -972,6 +972,7 @@
                     </view>
                     <connections>
                         <outlet property="changePswdBtn" destination="tb4-3Q-lZx" id="NsY-Ln-iL1"/>
+                        <outlet property="editBtn" destination="1r6-Cx-jPZ" id="bM9-5o-QKX"/>
                         <outlet property="emailLbl" destination="c4l-HL-oUQ" id="mOy-Db-hZC"/>
                         <outlet property="emailTxtFld" destination="gNg-Fh-gH5" id="wqU-GL-cYp"/>
                         <outlet property="mobileTxtFld" destination="CqI-bV-doq" id="FLZ-kF-89b"/>
