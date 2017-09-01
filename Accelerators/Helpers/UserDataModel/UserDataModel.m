@@ -140,11 +140,13 @@ static UserDataModel *sUserDataModel = nil;
     if (self.userData) {
         // Update existing user
         [self.userData setValue:mUserId forKey:@"userId"];
+        [self.userData setValue:mPassword forKey:@"password"];
     }
     else {
         // Create a new user
         NSManagedObject *newUserData = [NSEntityDescription insertNewObjectForEntityForName:ENTITY_NAME inManagedObjectContext:context];
         [newUserData setValue:mUserId forKey:@"userId"];
+        [newUserData setValue:mPassword forKey:@"password"];
 
     }
     
@@ -160,6 +162,7 @@ static UserDataModel *sUserDataModel = nil;
 
 - (void)printUserData{
     NSLog(@"UserId: %@", mUserId);
+    NSLog(@"Password: %@", mPassword);
 }
 
 @end
